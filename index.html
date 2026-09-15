@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Interactive functional scope for an integrated manufacturing ERP." />
+    <meta name="theme-color" content="#07111f" />
+    <title>Manufacturing ERP — Functional Scope</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2307111f'/%3E%3Cpath d='M14 43V22l12 7V20l12 7V14h12v29H14Z' fill='none' stroke='%236ee7d8' stroke-width='4' stroke-linejoin='round'/%3E%3Ccircle cx='44' cy='35' r='3' fill='%23f7b955'/%3E%3C/svg%3E" />
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="./app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="topbar">
+      <a class="brand" href="#overview" aria-label="Manufacturing ERP scope home">
+        <span class="brand-mark" aria-hidden="true">
+          <span></span><span></span><span></span>
+        </span>
+        <span>Manufacturing ERP</span>
+      </a>
+      <nav aria-label="Page sections">
+        <a href="#modules">Modules</a>
+        <a href="#flow">Business flow</a>
+        <a href="#scope">Scope</a>
+      </nav>
+      <button class="print-button" type="button" id="printButton" aria-label="Print or save this page as PDF">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 8V3h10v5M7 17H5a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2M7 14h10v7H7z"/></svg>
+        Print / Save PDF
+      </button>
+    </header>
+
+    <main id="main">
+      <section class="hero section-shell" id="overview">
+        <div class="hero-copy">
+          <p class="eyebrow">Proposed functional scope · Management review</p>
+          <h1>One connected operating system for the company.</h1>
+          <p class="hero-lead">
+            The ERP connects money, materials, production, quality, sales and delivery—so every department works from the same transaction and the same numbers.
+          </p>
+          <div class="hero-tags" aria-label="Scope highlights">
+            <span>6 business groups</span>
+            <span>End-to-end traceability</span>
+            <span>HR excluded from initial scope</span>
+          </div>
+        </div>
+
+        <aside class="hero-panel" aria-label="ERP operating chain">
+          <p class="panel-label">The operating chain</p>
+          <ol>
+            <li><strong>Plan</strong><span>Demand and budget</span></li>
+            <li><strong>Buy</strong><span>Source and approve</span></li>
+            <li><strong>Make</strong><span>Produce and inspect</span></li>
+            <li><strong>Deliver</strong><span>Sell and fulfil</span></li>
+            <li><strong>Account</strong><span>Collect and report</span></li>
+          </ol>
+        </aside>
+      </section>
+
+      <section class="flow-section section-shell" id="flow" aria-labelledby="flow-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Interactive business flow</p>
+            <h2 id="flow-title">Follow one transaction across the company</h2>
+          </div>
+          <p>Select a stage to see the responsible ERP group and the business result.</p>
+        </div>
+
+        <div class="flow-track" role="list" aria-label="End-to-end company process" id="flowTrack"></div>
+
+        <div class="flow-detail" id="flowDetail" aria-live="polite">
+          <div>
+            <span class="flow-number" id="flowNumber">01</span>
+            <p class="flow-owner" id="flowOwner">Finance & Management</p>
+          </div>
+          <div>
+            <h3 id="flowName">Plan & Budget</h3>
+            <p id="flowDescription"></p>
+          </div>
+          <div>
+            <p class="detail-label">System records</p>
+            <p id="flowRecords"></p>
+          </div>
+          <div>
+            <p class="detail-label">Business result</p>
+            <p id="flowResult"></p>
+          </div>
+        </div>
+      </section>
+
+      <section class="modules-section section-shell" id="modules" aria-labelledby="modules-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">The ERP structure</p>
+            <h2 id="modules-title">Six connected business groups</h2>
+          </div>
+          <p>Open any group to view the functions included within it.</p>
+        </div>
+        <div class="module-grid" id="moduleGrid"></div>
+      </section>
+
+      <section class="trace-section section-shell" aria-labelledby="trace-title">
+        <div class="trace-copy">
+          <p class="eyebrow">Numbering and traceability</p>
+          <h2 id="trace-title">Every material, document and batch keeps its identity.</h2>
+          <p>A finished lot can be traced backward to the materials, supplier, purchase order, inspections and production batch that created it—and forward to the customer and delivery.</p>
+        </div>
+        <div class="trace-chain" aria-label="Example transaction trace">
+          <span>PR</span><i></i><span>PO</span><i></i><span>GRN</span><i></i><span>Raw lot</span><i></i><span>Batch</span><i></i><span>FG lot</span><i></i><span>Delivery</span><i></i><span>Invoice</span>
+        </div>
+        <div class="code-examples">
+          <div><span>Purchase order</span><strong>PO-PLT1-FY26-000127</strong></div>
+          <div><span>Production batch</span><strong>PB-PLT1-260915-L02-003</strong></div>
+          <div><span>Finished-goods lot</span><strong>FL-PLT1-260915-L02-0007</strong></div>
+        </div>
+      </section>
+
+      <section class="scope-section section-shell" id="scope" aria-labelledby="scope-title">
+        <div class="section-heading scope-heading">
+          <div>
+            <p class="eyebrow">Implementation view</p>
+            <h2 id="scope-title">Designed as one ERP. Introduced in controlled stages.</h2>
+          </div>
+        </div>
+
+        <div class="scope-toggle" role="tablist" aria-label="ERP scope views">
+          <button role="tab" aria-selected="true" aria-controls="corePanel" id="coreTab" data-scope="core">Initial operating ERP</button>
+          <button role="tab" aria-selected="false" aria-controls="futurePanel" id="futureTab" data-scope="future">Future expansion</button>
+        </div>
+
+        <div class="scope-panel" id="corePanel" role="tabpanel" aria-labelledby="coreTab">
+          <div class="scope-statement">
+            <span>Core principle</span>
+            <p>The first release must complete the full operating chain. It should not create isolated departmental systems.</p>
+          </div>
+          <ul class="scope-list">
+            <li><span>01</span><div><strong>Financial foundation</strong><p>Accounts, budgets, costs, payments and reporting.</p></div></li>
+            <li><span>02</span><div><strong>Supply Chain</strong><p>Procurement, suppliers, stores, inventory and core logistics.</p></div></li>
+            <li><span>03</span><div><strong>Manufacturing</strong><p>Planning, materials, WIP, output, waste, rework and costing.</p></div></li>
+            <li><span>04</span><div><strong>Quality</strong><p>Incoming, in-process and finished-product control.</p></div></li>
+            <li><span>05</span><div><strong>Sales & Distribution</strong><p>Orders, finished-goods allocation, delivery, invoice and collection.</p></div></li>
+            <li><span>06</span><div><strong>Enterprise controls</strong><p>Users, approvals, audit, master data and dashboards.</p></div></li>
+          </ul>
+        </div>
+
+        <div class="scope-panel" id="futurePanel" role="tabpanel" aria-labelledby="futureTab" hidden>
+          <div class="scope-statement future">
+            <span>Expansion principle</span>
+            <p>Later modules will plug into the same financial, material, workflow and reporting foundation.</p>
+          </div>
+          <ul class="future-grid">
+            <li>Plant & machinery maintenance</li>
+            <li>Advanced fleet and GPS</li>
+            <li>Civil works and projects</li>
+            <li>HR and payroll</li>
+            <li>Supplier and customer portals</li>
+            <li>Advanced warehouse automation</li>
+            <li>Machine and IoT integration</li>
+            <li>Advanced planning and MES</li>
+            <li>Business intelligence and AI</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="outcomes-section section-shell" aria-labelledby="outcomes-title">
+        <div>
+          <p class="eyebrow">What management gains</p>
+          <h2 id="outcomes-title">Control that follows the work—not a report assembled afterwards.</h2>
+        </div>
+        <div class="outcome-grid">
+          <article><strong>One source of truth</strong><p>No repeated entry across departments.</p></article>
+          <article><strong>Accurate product cost</strong><p>Material, WIP, waste and output remain accounted for.</p></article>
+          <article><strong>Visible accountability</strong><p>Every approval, change and exception has an owner.</p></article>
+          <article><strong>Management visibility</strong><p>Live operational, financial and exception reporting.</p></article>
+        </div>
+      </section>
+
+      <section class="decision-section section-shell">
+        <p class="eyebrow">Recommended next step</p>
+        <h2>Confirm the structure. Then map the company's exact processes.</h2>
+        <p>Focused workshops with Finance, Supply Chain, Production, Quality, Sales and Management will define the real approval levels, reports, production stages and costing rules before technical design begins.</p>
+      </section>
+    </main>
+
+    <footer>
+      <span>Manufacturing ERP · Proposed functional scope</span>
+      <span>Prepared for management review</span>
+    </footer>
+
+    <dialog class="module-dialog" id="moduleDialog" aria-labelledby="dialogTitle">
+      <div class="dialog-topline">
+        <span id="dialogIndex">01</span>
+        <button type="button" id="closeDialog" aria-label="Close module details">×</button>
+      </div>
+      <p class="dialog-kicker" id="dialogKicker"></p>
+      <h2 id="dialogTitle"></h2>
+      <p class="dialog-summary" id="dialogSummary"></p>
+      <div class="dialog-content">
+        <div>
+          <p class="detail-label">Included functions</p>
+          <ul id="dialogFunctions"></ul>
+        </div>
+        <div class="dialog-outcome">
+          <p class="detail-label">Business outcome</p>
+          <p id="dialogOutcome"></p>
+        </div>
+      </div>
+    </dialog>
+  </body>
+</html>
