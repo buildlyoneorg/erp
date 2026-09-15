@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Buildlyone Manufacturing ERP functional scope</title>
+  <desc id="desc">One connected operating system for finance, materials, production, quality, sales and delivery.</desc>
+  <defs>
+    <radialGradient id="glowA" cx="0" cy="0" r="1" gradientTransform="translate(142 62) rotate(43) scale(470 380)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1d869d" stop-opacity=".34"/>
+      <stop offset="1" stop-color="#07111f" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowB" cx="0" cy="0" r="1" gradientTransform="translate(1090 80) rotate(130) scale(390 330)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#f7b955" stop-opacity=".17"/>
+      <stop offset="1" stop-color="#07111f" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="panel" x1="790" y1="164" x2="1120" y2="520" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#102238"/>
+      <stop offset="1" stop-color="#081422"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="#07111f"/>
+  <rect width="1200" height="630" fill="url(#glowA)"/>
+  <rect width="1200" height="630" fill="url(#glowB)"/>
+
+  <g transform="translate(70 58)">
+    <rect width="42" height="42" rx="11" fill="#0c1a2b" stroke="#6ee7d8" stroke-opacity=".52"/>
+    <rect x="10" y="23" width="5" height="10" rx="1.5" fill="#6ee7d8"/>
+    <rect x="19" y="16" width="5" height="17" rx="1.5" fill="#6ee7d8"/>
+    <rect x="28" y="9" width="5" height="24" rx="1.5" fill="#f7b955"/>
+    <text x="57" y="19" fill="#f4f7fa" font-family="Inter,Arial,sans-serif" font-size="20" font-weight="700">Buildlyone</text>
+    <text x="57" y="38" fill="#a8bacb" font-family="Inter,Arial,sans-serif" font-size="12">Manufacturing ERP scope</text>
+  </g>
+
+  <g transform="translate(70 176)">
+    <text fill="#6ee7d8" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="700" letter-spacing="2.4">PROPOSED FUNCTIONAL SCOPE</text>
+    <text y="76" fill="#f4f7fa" font-family="Inter,Arial,sans-serif" font-size="66" font-weight="780" letter-spacing="-3">One connected operating</text>
+    <text y="145" fill="#f4f7fa" font-family="Inter,Arial,sans-serif" font-size="66" font-weight="780" letter-spacing="-3">system for the company.</text>
+    <text y="198" fill="#c8d5df" font-family="Inter,Arial,sans-serif" font-size="20">Finance · Supply Chain · Manufacturing · Quality · Sales · Controls</text>
+  </g>
+
+  <g transform="translate(70 496)" font-family="Inter,Arial,sans-serif" font-size="15">
+    <rect width="172" height="42" rx="21" fill="#0c1a2b" stroke="#9ebbd7" stroke-opacity=".22"/>
+    <text x="23" y="26" fill="#a8bacb">6 business groups</text>
+    <rect x="186" width="204" height="42" rx="21" fill="#0c1a2b" stroke="#9ebbd7" stroke-opacity=".22"/>
+    <text x="209" y="26" fill="#a8bacb">End-to-end traceability</text>
+  </g>
+
+  <g transform="translate(805 156)">
+    <rect width="325" height="360" rx="22" fill="url(#panel)" stroke="#9ebbd7" stroke-opacity=".22"/>
+    <text x="26" y="42" fill="#a8bacb" font-family="Inter,Arial,sans-serif" font-size="12" font-weight="700" letter-spacing="1.6">THE OPERATING CHAIN</text>
+    <g font-family="Inter,Arial,sans-serif" font-size="17">
+      <g transform="translate(26 78)"><circle cy="12" r="3" fill="#6ee7d8"/><text x="18" y="18" fill="#f4f7fa" font-weight="700">Plan</text><text x="120" y="18" fill="#a8bacb">Demand and budget</text></g>
+      <path d="M26 114H299" stroke="#9ebbd7" stroke-opacity=".18"/>
+      <g transform="translate(26 130)"><circle cy="12" r="3" fill="#6ee7d8"/><text x="18" y="18" fill="#f4f7fa" font-weight="700">Buy</text><text x="120" y="18" fill="#a8bacb">Source and approve</text></g>
+      <path d="M26 166H299" stroke="#9ebbd7" stroke-opacity=".18"/>
+      <g transform="translate(26 182)"><circle cy="12" r="3" fill="#6ee7d8"/><text x="18" y="18" fill="#f4f7fa" font-weight="700">Make</text><text x="120" y="18" fill="#a8bacb">Produce and inspect</text></g>
+      <path d="M26 218H299" stroke="#9ebbd7" stroke-opacity=".18"/>
+      <g transform="translate(26 234)"><circle cy="12" r="3" fill="#6ee7d8"/><text x="18" y="18" fill="#f4f7fa" font-weight="700">Deliver</text><text x="120" y="18" fill="#a8bacb">Sell and fulfil</text></g>
+      <path d="M26 270H299" stroke="#9ebbd7" stroke-opacity=".18"/>
+      <g transform="translate(26 286)"><circle cy="12" r="3" fill="#6ee7d8"/><text x="18" y="18" fill="#f4f7fa" font-weight="700">Account</text><text x="120" y="18" fill="#a8bacb">Collect and report</text></g>
+    </g>
+  </g>
+
+  <text x="1130" y="586" text-anchor="end" fill="#f7b955" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="700" letter-spacing="1.2">CONCEPT PROPOSAL</text>
+</svg>

@@ -62,8 +62,10 @@ const flow = [
 ];
 
 const moduleGrid = document.querySelector("#moduleGrid");
+const printModuleDetails = document.querySelector("#printModuleDetails");
 const dialog = document.querySelector("#moduleDialog");
 const closeDialog = document.querySelector("#closeDialog");
+let lastModuleTrigger = null;
 
 modules.forEach((module, index) => {
   const card = document.createElement("button");
@@ -75,11 +77,21 @@ modules.forEach((module, index) => {
     <h3>${module.title}</h3>
     <p>${module.summary}</p>
     <span class="module-link">View included functions →</span>`;
-  card.addEventListener("click", () => openModule(module, index));
+  card.addEventListener("click", () => openModule(module, index, card));
   moduleGrid.appendChild(card);
+
+  const printDetail = document.createElement("article");
+  printDetail.innerHTML = `
+    <p class="detail-label">0${index + 1} · ${module.kicker}</p>
+    <h3>${module.title}</h3>
+    <p>${module.summary}</p>
+    <ul>${module.functions.map(item => `<li>${item}</li>`).join("")}</ul>
+    <p><strong>Business outcome:</strong> ${module.outcome}</p>`;
+  printModuleDetails.appendChild(printDetail);
 });
 
-function openModule(module, index) {
+function openModule(module, index, trigger) {
+  lastModuleTrigger = trigger;
   document.querySelector("#dialogIndex").textContent = `0${index + 1}`;
   document.querySelector("#dialogKicker").textContent = module.kicker;
   document.querySelector("#dialogTitle").textContent = module.title;
@@ -93,43 +105,78 @@ closeDialog.addEventListener("click", () => dialog.close());
 dialog.addEventListener("click", event => {
   if (event.target === dialog) dialog.close();
 });
+dialog.addEventListener("close", () => lastModuleTrigger?.focus());
 
 const flowTrack = document.querySelector("#flowTrack");
 flow.forEach((step, index) => {
   const button = document.createElement("button");
   button.type = "button";
   button.className = `flow-step${index === 0 ? " active" : ""}`;
-  button.setAttribute("role", "listitem");
-  button.setAttribute("aria-pressed", index === 0 ? "true" : "false");
+  button.id = `flowTab${index}`;
+  button.setAttribute("role", "tab");
+  button.setAttribute("aria-controls", "flowDetail");
+  button.setAttribute("aria-selected", index === 0 ? "true" : "false");
+  button.tabIndex = index === 0 ? 0 : -1;
   button.innerHTML = `<small>0${index + 1}</small><strong>${step.name}</strong>`;
   button.addEventListener("click", () => selectFlow(index));
+  button.addEventListener("keydown", event => {
+    let targetIndex = null;
+    if (event.key === "ArrowRight") targetIndex = (index + 1) % flow.length;
+    if (event.key === "ArrowLeft") targetIndex = (index - 1 + flow.length) % flow.length;
+    if (event.key === "Home") targetIndex = 0;
+    if (event.key === "End") targetIndex = flow.length - 1;
+    if (targetIndex === null) return;
+    event.preventDefault();
+    selectFlow(targetIndex, true);
+  });
   flowTrack.appendChild(button);
 });
 
-function selectFlow(index) {
+function selectFlow(index, moveFocus = false) {
   const step = flow[index];
   document.querySelectorAll(".flow-step").forEach((button, buttonIndex) => {
     const active = buttonIndex === index;
     button.classList.toggle("active", active);
-    button.setAttribute("aria-pressed", active ? "true" : "false");
+    button.setAttribute("aria-selected", active ? "true" : "false");
+    button.tabIndex = active ? 0 : -1;
   });
+  document.querySelector("#flowDetail").setAttribute("aria-labelledby", `flowTab${index}`);
   document.querySelector("#flowNumber").textContent = `0${index + 1}`;
   document.querySelector("#flowOwner").textContent = step.owner;
   document.querySelector("#flowName").textContent = step.name;
   document.querySelector("#flowDescription").textContent = step.description;
   document.querySelector("#flowRecords").textContent = step.records;
   document.querySelector("#flowResult").textContent = step.result;
+  if (moveFocus) document.querySelector(`#flowTab${index}`).focus();
 }
 
 selectFlow(0);
 
-document.querySelectorAll("[data-scope]").forEach(tab => {
-  tab.addEventListener("click", () => {
-    const core = tab.dataset.scope === "core";
-    document.querySelector("#coreTab").setAttribute("aria-selected", core ? "true" : "false");
-    document.querySelector("#futureTab").setAttribute("aria-selected", core ? "false" : "true");
-    document.querySelector("#corePanel").hidden = !core;
-    document.querySelector("#futurePanel").hidden = core;
+const scopeTabs = [...document.querySelectorAll("[data-scope]")];
+
+function selectScope(tab, moveFocus = false) {
+  const core = tab.dataset.scope === "core";
+  scopeTabs.forEach(scopeTab => {
+    const active = scopeTab === tab;
+    scopeTab.setAttribute("aria-selected", active ? "true" : "false");
+    scopeTab.tabIndex = active ? 0 : -1;
+  });
+  document.querySelector("#corePanel").hidden = !core;
+  document.querySelector("#futurePanel").hidden = core;
+  if (moveFocus) tab.focus();
+}
+
+scopeTabs.forEach((tab, index) => {
+  tab.addEventListener("click", () => selectScope(tab));
+  tab.addEventListener("keydown", event => {
+    let targetIndex = null;
+    if (event.key === "ArrowRight") targetIndex = (index + 1) % scopeTabs.length;
+    if (event.key === "ArrowLeft") targetIndex = (index - 1 + scopeTabs.length) % scopeTabs.length;
+    if (event.key === "Home") targetIndex = 0;
+    if (event.key === "End") targetIndex = scopeTabs.length - 1;
+    if (targetIndex === null) return;
+    event.preventDefault();
+    selectScope(scopeTabs[targetIndex], true);
   });
 });
 

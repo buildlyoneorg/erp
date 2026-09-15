@@ -3,9 +3,23 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Interactive functional scope for an integrated manufacturing ERP." />
+    <meta name="description" content="Buildlyone's interactive functional-scope proposal for a connected manufacturing ERP spanning finance, supply chain, production, quality, sales and enterprise controls." />
     <meta name="theme-color" content="#07111f" />
-    <title>Manufacturing ERP — Functional Scope</title>
+    <link rel="canonical" href="https://erp.buildlyone.com/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Buildlyone" />
+    <meta property="og:title" content="Buildlyone Manufacturing ERP — Functional Scope" />
+    <meta property="og:description" content="A management-ready view of one connected operating system for finance, materials, production, quality, sales and delivery." />
+    <meta property="og:url" content="https://erp.buildlyone.com/" />
+    <meta property="og:image" content="https://erp.buildlyone.com/social-preview.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Buildlyone Manufacturing ERP functional scope" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Buildlyone Manufacturing ERP — Functional Scope" />
+    <meta name="twitter:description" content="A management-ready view of one connected operating system for a manufacturing company." />
+    <meta name="twitter:image" content="https://erp.buildlyone.com/social-preview.png" />
+    <title>Buildlyone Manufacturing ERP — Functional Scope</title>
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2307111f'/%3E%3Cpath d='M14 43V22l12 7V20l12 7V14h12v29H14Z' fill='none' stroke='%236ee7d8' stroke-width='4' stroke-linejoin='round'/%3E%3Ccircle cx='44' cy='35' r='3' fill='%23f7b955'/%3E%3C/svg%3E" />
     <link rel="stylesheet" href="./styles.css" />
     <script src="./app.js" defer></script>
@@ -14,15 +28,16 @@
     <a class="skip-link" href="#main">Skip to content</a>
 
     <header class="topbar">
-      <a class="brand" href="#overview" aria-label="Manufacturing ERP scope home">
+      <a class="brand" href="#overview" aria-label="Buildlyone Manufacturing ERP scope home">
         <span class="brand-mark" aria-hidden="true">
           <span></span><span></span><span></span>
         </span>
-        <span>Manufacturing ERP</span>
+        <span class="brand-copy"><strong>Buildlyone</strong><small>Manufacturing ERP scope</small></span>
       </a>
       <nav aria-label="Page sections">
         <a href="#modules">Modules</a>
         <a href="#flow">Business flow</a>
+        <a href="#roadmap">Roadmap</a>
         <a href="#scope">Scope</a>
       </nav>
       <button class="print-button" type="button" id="printButton" aria-label="Print or save this page as PDF">
@@ -34,6 +49,10 @@
     <main id="main">
       <section class="hero section-shell" id="overview">
         <div class="hero-copy">
+          <div class="proposal-status" aria-label="Document status">
+            <strong>Concept proposal</strong>
+            <span>Version 1.1 · 15 September 2026</span>
+          </div>
           <p class="eyebrow">Proposed functional scope · Management review</p>
           <h1>One connected operating system for the company.</h1>
           <p class="hero-lead">
@@ -44,6 +63,7 @@
             <span>End-to-end traceability</span>
             <span>HR excluded from initial scope</span>
           </div>
+          <p class="proposal-notice"><strong>Current status:</strong> this is a functional-scope proposal for discussion. It is not yet a configured or operational ERP application.</p>
         </div>
 
         <aside class="hero-panel" aria-label="ERP operating chain">
@@ -67,15 +87,15 @@
           <p>Select a stage to see the responsible ERP group and the business result.</p>
         </div>
 
-        <div class="flow-track" role="list" aria-label="End-to-end company process" id="flowTrack"></div>
+        <div class="flow-track" role="tablist" aria-label="End-to-end company process" id="flowTrack"></div>
 
-        <div class="flow-detail" id="flowDetail" aria-live="polite">
+        <div class="flow-detail" id="flowDetail" role="tabpanel" aria-labelledby="flowTab0" aria-live="polite" tabindex="0">
           <div>
             <span class="flow-number" id="flowNumber">01</span>
-            <p class="flow-owner" id="flowOwner">Finance & Management</p>
+            <p class="flow-owner" id="flowOwner">Finance &amp; Management</p>
           </div>
           <div>
-            <h3 id="flowName">Plan & Budget</h3>
+            <h3 id="flowName">Plan &amp; Budget</h3>
             <p id="flowDescription"></p>
           </div>
           <div>
@@ -98,6 +118,7 @@
           <p>Open any group to view the functions included within it.</p>
         </div>
         <div class="module-grid" id="moduleGrid"></div>
+        <div class="print-module-details" id="printModuleDetails" aria-label="Detailed ERP functions"></div>
       </section>
 
       <section class="trace-section section-shell" aria-labelledby="trace-title">
@@ -116,6 +137,24 @@
         </div>
       </section>
 
+      <section class="roadmap-section section-shell" id="roadmap" aria-labelledby="roadmap-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Implementation roadmap</p>
+            <h2 id="roadmap-title">One operating chain, introduced in controlled waves.</h2>
+          </div>
+          <p>Each wave proves process ownership, accounting impact and data integrity before the next capability is introduced.</p>
+        </div>
+        <ol class="roadmap-grid">
+          <li><span>01</span><div><strong>Discover</strong><p>Confirm products, sites, roles, approvals, production stages, reports and controls.</p></div></li>
+          <li><span>02</span><div><strong>Build the foundation</strong><p>Set up master data, users, finance, workflows, numbering and audit controls.</p></div></li>
+          <li><span>03</span><div><strong>Plan to pay</strong><p>Connect budgets, requisitions, sourcing, purchase orders, receiving and supplier accounting.</p></div></li>
+          <li><span>04</span><div><strong>Make to stock</strong><p>Control materials, WIP, production, quality, yield, waste, rework and product cost.</p></div></li>
+          <li><span>05</span><div><strong>Order to cash</strong><p>Connect customer orders, released stock, dispatch, delivery, invoicing and collection.</p></div></li>
+          <li><span>06</span><div><strong>Assure and go live</strong><p>Run the sandbox, end-to-end tests, parallel reconciliation, training and formal sign-off.</p></div></li>
+        </ol>
+      </section>
+
       <section class="scope-section section-shell" id="scope" aria-labelledby="scope-title">
         <div class="section-heading scope-heading">
           <div>
@@ -125,8 +164,8 @@
         </div>
 
         <div class="scope-toggle" role="tablist" aria-label="ERP scope views">
-          <button role="tab" aria-selected="true" aria-controls="corePanel" id="coreTab" data-scope="core">Initial operating ERP</button>
-          <button role="tab" aria-selected="false" aria-controls="futurePanel" id="futureTab" data-scope="future">Future expansion</button>
+          <button role="tab" aria-selected="true" aria-controls="corePanel" id="coreTab" data-scope="core" tabindex="0">Initial operating ERP</button>
+          <button role="tab" aria-selected="false" aria-controls="futurePanel" id="futureTab" data-scope="future" tabindex="-1">Future expansion</button>
         </div>
 
         <div class="scope-panel" id="corePanel" role="tabpanel" aria-labelledby="coreTab">
@@ -139,7 +178,7 @@
             <li><span>02</span><div><strong>Supply Chain</strong><p>Procurement, suppliers, stores, inventory and core logistics.</p></div></li>
             <li><span>03</span><div><strong>Manufacturing</strong><p>Planning, materials, WIP, output, waste, rework and costing.</p></div></li>
             <li><span>04</span><div><strong>Quality</strong><p>Incoming, in-process and finished-product control.</p></div></li>
-            <li><span>05</span><div><strong>Sales & Distribution</strong><p>Orders, finished-goods allocation, delivery, invoice and collection.</p></div></li>
+            <li><span>05</span><div><strong>Sales &amp; Distribution</strong><p>Orders, finished-goods allocation, delivery, invoice and collection.</p></div></li>
             <li><span>06</span><div><strong>Enterprise controls</strong><p>Users, approvals, audit, master data and dashboards.</p></div></li>
           </ul>
         </div>
@@ -150,7 +189,7 @@
             <p>Later modules will plug into the same financial, material, workflow and reporting foundation.</p>
           </div>
           <ul class="future-grid">
-            <li>Plant & machinery maintenance</li>
+            <li>Plant &amp; machinery maintenance</li>
             <li>Advanced fleet and GPS</li>
             <li>Civil works and projects</li>
             <li>HR and payroll</li>
@@ -179,12 +218,24 @@
       <section class="decision-section section-shell">
         <p class="eyebrow">Recommended next step</p>
         <h2>Confirm the structure. Then map the company's exact processes.</h2>
-        <p>Focused workshops with Finance, Supply Chain, Production, Quality, Sales and Management will define the real approval levels, reports, production stages and costing rules before technical design begins.</p>
+        <p class="decision-intro">Focused workshops with Finance, Supply Chain, Production, Quality, Sales and Management will define the real approval levels, reports, production stages and costing rules before technical design begins.</p>
+        <div class="decision-box">
+          <p class="detail-label">Management confirmation required</p>
+          <ul>
+            <li>The six proposed ERP groups</li>
+            <li>The initial-scope and future-scope boundary</li>
+            <li>The participating departments and process owners</li>
+            <li>The factory products, sites and production stages</li>
+            <li>The discovery-workshop participants</li>
+            <li>The target implementation sequence and timeline</li>
+          </ul>
+        </div>
       </section>
     </main>
 
     <footer>
-      <span>Manufacturing ERP · Proposed functional scope</span>
+      <span><strong>Buildlyone</strong> · Manufacturing ERP functional scope</span>
+      <span>Concept proposal · Version 1.1 · 15 September 2026</span>
       <span>Prepared for management review</span>
     </footer>
 
