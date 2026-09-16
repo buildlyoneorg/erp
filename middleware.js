@@ -5,7 +5,7 @@ const AUTH_USERNAME = 'review';
 
 // Only the SHA-256 digest is committed. The shared password is kept outside Git.
 const AUTH_PASSWORD_SHA256 =
-  '05927626661e020d4e5b47b888959c04ede325337f2947a188bd3097e806b4dd';
+  '68c37ff1d855432781a0d605c5ac4d0c2f2373ed3f7f4cc277cc697e5579485c';
 
 function unauthorized() {
   return new Response('Authentication required.', {
