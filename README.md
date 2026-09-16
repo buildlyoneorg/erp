@@ -21,9 +21,18 @@ The custom hostname is connected separately through the hosting platform and the
 
 ## Deployment
 
-This is a dependency-free static site. On Vercel, use the repository root with the **Other** framework preset, no build command, and `.` as the output directory. No environment variables are required.
+This is a static site with a small Vercel Routing Middleware dependency. On Vercel, use the repository root with the **Other** framework preset, no build command, and `.` as the output directory. No environment variables are required.
 
 The current Vercel account must be active and in good billing standing before project creation or deployment can complete.
+
+### Access protection
+
+The Vercel deployment is protected by HTTP Basic Authentication in `middleware.js`.
+
+- Username: `review`
+- The shared password is not stored in Git; only its SHA-256 digest is committed.
+- To rotate the password, generate a new digest with `printf %s 'NEW_PASSWORD' | shasum -a 256`, replace `AUTH_PASSWORD_SHA256` in `middleware.js`, and redeploy.
+- Browsers usually remember Basic Authentication for the current session. To sign out, close all browser windows or clear the site's saved data.
 
 ## Preview locally
 

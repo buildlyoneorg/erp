@@ -1,0 +1,8 @@
+{
+  "name": "buildlyone-erp-scope",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "@vercel/functions": "3.9.8"
+  }
+}
